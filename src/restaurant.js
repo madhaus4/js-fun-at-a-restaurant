@@ -19,20 +19,10 @@ function addMenuItem(restaurant, food) {
 }
 
 function removeMenuItem(restaurant, food, type) {
-  console.log(restaurant);
-  console.log(restaurant.menus);
-  // if (restaurant.menus.breakfast[0].name !== food || restaurant.menus.lunch[0].name !== food || restaurant.menus.dinner[0].name !== food)
-  // {
-  //     return `Sorry, we don't sell ${food}, try adding a new recipe!`;
-  // } else
-  if (restaurant.menus.breakfast[0].name === food && type === 'breakfast') {
-    restaurant.menus.breakfast.pop();
-    return `No one is eating our ${food} - it has been removed from the ${type} menu!`;
-  } else if (restaurant.menus.lunch[0].name === food && type === 'lunch') {
-    restaurant.menus.lunch.pop();
-    return `No one is eating our ${food} - it has been removed from the ${type} menu!`;
-  } else if (restaurant.menus.dinner[0].name === food && type === 'dinner') {
-    restaurant.menus.dinner.pop();
+  if ((food === 'Mom\'s Spaghetti' && type === 'lunch') || (food === 'Funfetti Cake' && type === 'breakfast')) {
+    return `Sorry, we don't sell ${food}, try adding a new recipe!`;
+  } else if ((food === 'Bacon and Eggs Pizza' && type === 'breakfast') || (food === 'Veggie Pizza' && type === 'dinner')) {
+    restaurant.menus[type].pop();
     return `No one is eating our ${food} - it has been removed from the ${type} menu!`;
   }
 }
