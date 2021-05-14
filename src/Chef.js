@@ -12,10 +12,13 @@ class Chef {
     }
   }
 
-  createRestaurant(item) {
-    return `Yes, we're serving ${item} today!`;
+  checkForFood(item) {
+    if (this.restaurant.menus.breakfast.includes(item)) {
+      return `Yes, we're serving ${item.name} today!`;
+    } else {
+      return `Sorry, we aren't serving ${item.name} today.`;
+    }
   }
-
 }
 
 module.exports = Chef;
