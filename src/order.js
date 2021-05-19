@@ -1,7 +1,6 @@
 function takeOrder(order, deliveryOrders) {
-  deliveryOrders.push(order);
-  if (deliveryOrders.length > 3) {
-    deliveryOrders.pop(order);
+  if (deliveryOrders.length < 3) {
+    deliveryOrders.push(order);
   }
 }
 
