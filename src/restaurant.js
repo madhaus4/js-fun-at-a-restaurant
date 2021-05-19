@@ -1,10 +1,11 @@
 var restaurant = {};
 function createRestaurant(name) {
   restaurant.name = name;
-  restaurant.menus = {};
-    restaurant.menus.breakfast = [];
-    restaurant.menus.lunch = [];
-    restaurant.menus.dinner = [];
+  restaurant.menus = {
+    breakfast: [],
+    lunch: [],
+    dinner: [],
+  };
   return restaurant;
 }
 
@@ -15,6 +16,12 @@ function addMenuItem(restaurant, food) {
     restaurant.menus.lunch.push(food)
   } else if (food.type === 'dinner') {
     restaurant.menus.dinner.push(food)
+  }
+}
+
+function addMenuItem(restaurant, food) {
+  if (!restaurant.menus[food.type].includes(food)) {
+    restaurant.menus[food.type].push(food);
   }
 }
 
