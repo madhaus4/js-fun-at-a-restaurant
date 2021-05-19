@@ -28,10 +28,7 @@ function searchOrder(deliveryOrders, item) {
   for (var i = 0; i < deliveryOrders.length; i++) {
     orderList.push(deliveryOrders[i].item);
   }
-  if (orderList.includes(item)) {
-    return true;
-  }
-  return false;
+  return orderList.includes(item);
 }
 
 
